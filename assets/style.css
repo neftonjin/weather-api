@@ -1,1 +1,5 @@
 body { background-color:darkgray};
+#forecast_list{
+    list-style-type: none;
+    display: block;
+}
