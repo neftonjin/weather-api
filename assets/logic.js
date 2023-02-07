@@ -10,8 +10,11 @@ $(document).ready(function () {
         const inputValue = $("#search-input").val().trim();
         const geoLocationUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + inputValue + "&appid=" + apiKey + "&limit=1";
         let locationName = "";
+        let brokenUrl=fetch(geoLocationUrl);
 
+    if (inputValue === "" || undefined || null || brokenUrl===false){ alert("Please enter a valid city name !!")}  else{
 
+    
      //This function is making the requests
         function fetchData() {
             return fetch(geoLocationUrl)
@@ -127,7 +130,8 @@ $(document).ready(function () {
 
 
         }); //end of fetch data 
-
+     
+    }//end of if
 
 
     }); //end of on click event
