@@ -6,7 +6,7 @@ const apiKey = "c31e504839cbc7b7623cd443f986305d"
 $("#search-button").on("click", function (event) {
     event.preventDefault();
     const inputValue = $("#search-input").val().trim();
-    const geoLocationUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + inputValue + "&appid=" + apiKey + "&limit=1";
+    const geoLocationUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + inputValue + "&appid=" + apiKey + "&limit=1";
 
 
     function fetchData() {
