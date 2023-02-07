@@ -72,7 +72,7 @@ $("#search-button").on("click", function (event) {
 
             let buttonClick = event.target.getAttribute('data-name');
             console.log(" this is the history input " + buttonClick);
-            const geoLocationUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + buttonClick + "&appid=" + apiKey + "&limit=1";
+            const geoLocationUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + buttonClick + "&appid=" + apiKey + "&limit=1";
 
 
             $.ajax({
