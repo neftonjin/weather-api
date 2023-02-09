@@ -15,7 +15,7 @@
 - If you need to check again the same city you don`t have to type it again you just have to click on it 
 
 ### Known bugs  ( to be fixed)
-- when pressing the history button the city name is not changing accordingly only the forecast details
+
 - history buttons not implemented in localstorage yet so if you refresh history will disappear
 - if no city is typed or an incorrect city name is passed to the search an error will appear in console 
 
