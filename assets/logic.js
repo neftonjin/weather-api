@@ -47,9 +47,11 @@ $(document).ready(function () {
     //This click event is the entry into the app 
     //After clicking the fetchData function is making two requests one for the geolocation and another one for the forecast with the geolocation value
     $("#search-button").on("click", function (event) {
+        inputValue = $("#search-input").val().trim();
+        if (inputValue === "" || inputValue === undefined || inputValue === null ){ alert("Search can`t be empty!!")}  else{
         event.preventDefault();
 
-        inputValue = $("#search-input").val().trim();
+        
 
         fetchData().then(data => {
             let title = "5 Days Forecast";
@@ -64,9 +66,12 @@ $(document).ready(function () {
             renderButtons();
 
         }); //end of fetch data 
+
+    }//end of if statement
+
     }); //end of on click event
 
-    //  if (inputValue === "" || undefined || null ){ alert("Please enter a valid city name !!")}  else{
+    // 
 
 
     //This function is making the requests
@@ -76,15 +81,12 @@ $(document).ready(function () {
             .then(firstData => {
                 if (firstData[0].name) {
                     locationName = firstData[0].name;
-                    // console.log("This is the first data name :" + firstData[0].name);
-                    localStorage.setItem("name", firstData[0].name);
-                    // console.log("This is local varialble" + localStorage.getItem(name));
                     return fetch("https://api.openweathermap.org/data/2.5/forecast/daily?lat=" + firstData[0].lat + "&lon=" + firstData[0].lon + "&cnt=6&appid=" + apiKey + "&units=metric")
                         .then(secondResponse => secondResponse.json())
                         .then(secondData => {
                             return secondData;
                         });
-                } //if
+                } //if end
                 else {
                     return;
                 }
@@ -124,7 +126,7 @@ $(document).ready(function () {
                 let li = "<ul id='current_date' class='day'> <li id='city_name' > " + locationName + " </li>   <li id='date' class='forecast date'> " + date + " </li>   <li id='icon' class='forecast '> <img class='icon' src='http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png' " +
                     " </li>  <li id='humidity' class='forecast'> Humidity : " + data.list[i].humidity +
                     "</li>     <li id=''temp  class='forecast temp'> Temp: " + data.list[i].temp.day +
-                    "'\u2103'</li>     <li id='wind'  class='forecast speed'> Wind: " + data.list[i].speed +
+                    "\u2103</li>     <li id='wind'  class='forecast speed'> Wind: " + data.list[i].speed +
                     "km/h</li>  </ul> ";
                 $("#today").append(li);
 
@@ -134,7 +136,7 @@ $(document).ready(function () {
                 let li = "<ul class='day'> <li class='forecast date'> " + date + " </li>   <li  class='forecast '> <img class='icon' src='http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png' " +
                     " </li>  <li class='forecast'> Humidity : " + data.list[i].humidity +
                     "</li>     <li  class='forecast temp'> Temp: " + data.list[i].temp.day +
-                    "'\u2103'</li>     <li  class='forecast speed'> Wind: " + data.list[i].speed +
+                    "\u2103</li>     <li  class='forecast speed'> Wind: " + data.list[i].speed +
                     "km/h</li>  </ul> ";
                 $("#forecast").append(li);
 
