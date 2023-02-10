@@ -16,7 +16,6 @@
 
 ### Known bugs  ( to be fixed)
 
-- history buttons not implemented in localstorage yet so if you refresh history will disappear
 - if no city is typed or an incorrect city name is passed to the search an error will appear in console 
 
 ### Links 
