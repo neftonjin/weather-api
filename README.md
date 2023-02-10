@@ -28,4 +28,4 @@
 ### App Preview
 
 
-<img width="1354" alt="Uasdfsfsdfsdfntitled" src="https://user-images.githubusercontent.com/25286630/217599499-29be8243-7241-45d7-b135-d3b366e183eb.png">
+![image](https://user-images.githubusercontent.com/25286630/218142769-13112651-4203-4638-a316-199463d43e32.png)

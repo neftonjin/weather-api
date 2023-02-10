@@ -58,7 +58,7 @@ $(document).ready(function () {
             $("#subTitle").text(title);
             $("#forecast").empty();
             $("#today").empty();
-            console.log("The name " + data);
+            
 
             displayForecast(data);
 
@@ -98,7 +98,7 @@ $(document).ready(function () {
     //This function is  appending the buttons to the html page
     function renderButtons() {
 
-        let button = "<button class='search'  id='historyButton' data-name=" + inputValue + "  > " + inputValue + "</button>";
+        let button = "<button class='search btn btn-info'  id='historyButton' data-name=" + inputValue + "  > " + inputValue + "</button>";
         $("#history").append(button);
     }
     // This function is appending the history buttons from the local storage to the html
@@ -109,7 +109,7 @@ $(document).ready(function () {
             return;
         } else {
             history.forEach(function (element) {
-                let button = "<button class='search'  id='historyButton' data-name=" + element + "  > " + element + "</button>";
+                let button = "<button class='search btn btn-info'  id='historyButton' data-name=" + element + "  > " + element + "</button>";
                 $("#history").append(button);
             });
 
@@ -121,7 +121,7 @@ $(document).ready(function () {
     function displayForecast(data) {
         for (let i = 0; i < data.list.length; i++) {
             if (i === 0) {
-                console.log("this is the location name :" + locationName);
+               
                 date = moment.unix(data.list[i].dt).format("DD/MM/YYYY");
                 let li = "<ul id='current_date' class='day'> <li id='city_name' > " + locationName + " </li>   <li id='date' class='forecast date'> " + date + " </li>   <li id='icon' class='forecast '> <img class='icon' src='http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png' " +
                     " </li>  <li id='humidity' class='forecast'> Humidity : " + data.list[i].humidity +
@@ -132,7 +132,7 @@ $(document).ready(function () {
 
             } else {
                 date = moment.unix(data.list[i].dt).format("DD/MM/YYYY");
-                //   console.log("this is not need to go onlly 5 times  ");
+               
                 let li = "<ul class='day'> <li class='forecast date'> " + date + " </li>   <li  class='forecast '> <img class='icon' src='http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png' " +
                     " </li>  <li class='forecast'> Humidity : " + data.list[i].humidity +
                     "</li>     <li  class='forecast temp'> Temp: " + data.list[i].temp.day +
@@ -171,7 +171,6 @@ $(document).ready(function () {
 
 
         locationName = event.target.getAttribute('data-name');
-        console.log(" This is the history input  which needs to change " + locationName);
         const geoLocationUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + locationName + "&appid=" + apiKey + "&limit=1";
 
 

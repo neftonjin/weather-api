@@ -4,7 +4,9 @@
   box-sizing: content-box;
 }
 
-
+body{
+  background-color: #2a3b4c;
+}
 .forecast{
     font-weight: 400;
 }
@@ -25,7 +27,7 @@
 button{
     padding: 0.3rem;
     border-radius: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 1.5px;
     background-color: darkgray;
     border: none;
 }
@@ -57,16 +59,21 @@ background: linear-gradient(75deg, rgba(20,90,119,1) 27%, rgba(13,66,117,1) 56%,
 header{
     margin:0px;
     padding: 0px;
+   
 }
 .container-fluid{
     padding: 0;
 }
-/* #today{
-    background-color: rgb(219, 211, 197);
-    padding: 1rem;
-    border: 1px solid black;
-} */
+
 #current_date{
     font-size: 1.7rem;
     font-weight: bold;
+}
+h2{color:white}
+
+.btn-info {
+  color: #3c7386;
+  background-color: #ffffff;
+  border-color: #2295a7;
+  font-weight: 700;
 }
